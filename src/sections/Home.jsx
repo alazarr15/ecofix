@@ -1,59 +1,33 @@
-import { useState } from "react";
-import { FaLeaf } from "react-icons/fa";
-import { motion } from "framer-motion";
+import React from "react";
 
-export default function EcoFix() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+const Home = () => {
   return (
-    <div className="font-sans bg-green-50 text-gray-900">
-      {/* Navbar */}
-      <nav className="bg-white shadow-md fixed w-full z-10 top-0 p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center text-black text-3xl font-bold pl-12">
-            <img src="/ecofix.png" alt="logo1" className="w-14 h-14" />EcoFix
-          </div>
-          <ul className="hidden md:flex gap-6 text-gray-700 pr-12">
-            <li className="hover:text-[#23b4b9] cursor-pointer text-lg">Home</li>
-            <li className="hover:text-[#23b4b9] cursor-pointer text-lg">About</li>
-            <li className="hover:text-[#23b4b9] cursor-pointer text-lg">Services</li>
-            <li className="hover:text-[#23b4b9] cursor-pointer text-lg">Contact</li>
-          </ul>
-          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-            ☰
-          </button>
+    <div className="min-h-screen bg-black flex flex-col items-center text-white">
+      {/* Header */}
+      <header className="w-full flex flex-wrap justify-around items-center px-4 py-4 bg-black gap-4 md:gap-16 font-bold">
+        <div className="flex items-center space-x-2">
+          <img src="/ecofix1.png" alt="EcoFix Logo" className="h-20 w-40 md:h-28 md:w-56 lg:h-32 lg:w-72" />
         </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white shadow-md p-4 absolute top-16 left-0 w-full">
-          <ul className="flex flex-col gap-4 text-gray-700">
-            <li className="hover:text-[#23b4b9] cursor-pointer">Home</li>
-            <li className="hover:text-[#23b4b9] cursor-pointer">About</li>
-            <li className="hover:text-[#23b4b9] cursor-pointer">Services</li>
-            <li className="hover:text-[#23b4b9] cursor-pointer">Contact</li>
+        <nav className="w-full md:w-auto">
+          <ul className="flex flex-wrap justify-around md:justify-start space-x-4 md:space-x-8 lg:space-x-14 uppercase text-sm md:text-lg lg:text-xl">
+            <li><a href="#about" className="hover:text-teal-500">About Us</a></li>
+            <li><a href="#service" className="hover:text-teal-500">Service</a></li>
+            <li><a href="#pricing" className="hover:text-teal-500">Pricing</a></li>
+            <li><a href="#contact" className="hover:text-teal-500">Contact</a></li>
           </ul>
-        </div>
-      )}
-
-      {/* Hero Section //bg-[#23b4b9] */}
-      <header className="h-screen flex items-center justify-center bg-[#0d4465] gap-32">
-        <motion.div
-          className="text-center p-8"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="sm:text-7xl text-4xl font-bold text-white">Your Environmental Fix!</h1>
-          <p className="mt-8 sm:text-2xl text-xl text-white font-bold">
-            Join us in making the world a cleaner place with our eco-friendly services.
-          </p>
-          <button className="mt-8 px-12 py-4 bg-[#23b4b9] text-white font-bold rounded-full shadow-md hover:bg-green-700 transition">
-            Get Started
-          </button>
-        </motion.div>
+        </nav>
       </header>
+
+      {/* Hero Section */}
+      <main className="flex flex-col items-start text-center mt-16 px-4 w-full md:mt-24 lg:mt-32 md:px-12 lg:pl-52">
+        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 md:mb-10 lg:mb-12">YOUR ENVIRONMENTAL</h2>
+        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-teal-500">FIX!</h2>
+        <button className="mt-12 md:mt-16 lg:mt-24 bg-white border border-teal-400 text-teal-400 px-4 py-2 md:px-6 md:py-3 text-lg md:text-2xl lg:text-4xl font-bold">
+          Read More!
+        </button>
+      </main>
     </div>
   );
-}
+};
+
+export default Home;
