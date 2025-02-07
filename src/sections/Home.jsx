@@ -18,7 +18,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center text-white" onClick={handleClickOutside}>
+    <div className="min-h-screen bg-black flex flex-col items-center text-white w-[100%]" onClick={handleClickOutside}>
       {/* Header */}
       <header className="w-full flex justify-between items-center px-4 py-4 bg-black md:px-8 lg:px-16 font-bold">
         <div>
