@@ -18,7 +18,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center text-white w-[100%]" onClick={handleClickOutside}>
+    <div className="min-h-screen bg-black flex flex-col items-center text-white w-[100%] overflow-x-hidden" onClick={handleClickOutside}>
       {/* Header */}
       <header className="w-full flex justify-between items-center px-4 py-4 bg-black md:px-8 lg:px-16 font-bold">
         <div>
@@ -61,9 +61,12 @@ const Home = () => {
       <main className="flex flex-col md:items-start items-center text-center mt-16 px-4 w-full md:mt-24 lg:mt-32 md:px-12 lg:pl-52">
         <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 md:mb-10 lg:mb-12">YOUR ENVIRONMENTAL</h2>
         <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-teal-500">FIX!</h2>
-        <button className="mt-12 md:mt-16 lg:mt-24 bg-white border border-teal-400 text-teal-400 px-4 py-2 md:px-6 md:py-3 text-lg md:text-2xl lg:text-4xl font-bold">
+        <button className="mt-12 md:mt-16 lg:mt-24 bg-white border border-teal-400 text-teal-400 px-1 py-2 text-lg md:text-2xl lg:text-4xl font-bold">
           Read More!
         </button>
+        <div className="w-full ml-42 flex justify-end mt-8 md:mt-0"> 
+            <img src="/ecopattern.png" alt="eco-pattern"  className="w-[400px] h-[280px] "/>
+        </div>
       </main>
     </div>
   );
